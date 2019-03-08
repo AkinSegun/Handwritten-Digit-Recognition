@@ -3,11 +3,15 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class kNN {
+	private MNIST in_stream_labels;
+	private MNIST in_stream_images;
+	private DrawArea drawArea;
+	
 	Float getDistanceBetween(float[] dataElement1, float[] dataElement2) {
-	    int x1 =  Math.round(dataElement1[X_COORDINATE_INDEX]   ) ;
-	    int y1 =  Math.round(dataElement1[Y_COORDINATE_INDEX]   ) ;
-	    int x2 =  Math.round(dataElement2[X_COORDINATE_INDEX]   ) ;
-	    int y2 =  Math.round(dataElement2[Y_COORDINATE_INDEX]   ) ;
+	    int x1 =  Math.round(dataElement1[DrawArea.get(oldX)]   ) ;
+	    int y1 =  Math.round(dataElement1[DrawArea.get(oldY)]   ) ;
+	    int x2 =  Math.round(dataElement2[MNIST.get(in_stream_labels.read())]   ) ;
+	    int y2 =  Math.round(dataElement2[MNIST.get(in_stream_images.read())]   ) ;
 	    int term1 = (x2 - x1) * (x2 - x1);
 	    int term2 = (y2 - y1) * (y2 - y1);
 	    int sum = term1 + term2;
@@ -35,8 +39,8 @@ public class kNN {
 	
 	for (int index = 0; index < trainingData.size(); index++) {
 	    float distance = getDistanceBetween(dataPoint, trainingData.get(index));
-	    distances.add(distance);
-	    distancesClone.add(distance);
+	    int distances.add(distance);
+	    int distancesClone.add(distance);
 	}
 	public static LabeledImage predict(BufferedImage labeledImage) {
 		// TODO Auto-generated method stub
@@ -69,3 +73,8 @@ public class kNN {
 	    return CLASS_2
 	}
 }
+
+	private void (float distance) {
+		// TODO Auto-generated method stub
+		
+	}
