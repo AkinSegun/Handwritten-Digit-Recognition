@@ -8,7 +8,7 @@ A Java handwritten digit recognition program with kNN classifier. The program wi
 
 ### How do I get set up? ###
 
-Should run straight from Runprog.java
+Should run straight from Runprog.java located in /src
 
 
 ### Who do I talk to? ###
